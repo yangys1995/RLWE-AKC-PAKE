@@ -1,0 +1,32 @@
+#ifndef PARAMS_PAK_H
+#define PARAMS_PAK_H
+
+#define PARAM_N 1024
+
+#define PARAM_K 16 /* used in sampler */
+#define PARAM_Q 12289 //14比特
+
+#define POLY_BYTES 1792  //1024*14/8
+#define PAK_SEEDBYTES 32
+#define POLY_SMALL_BYTES 768 //1024*6/8 xinhaozhi
+#define PAK_KEYBYTES (PARAM_N*BITS_M/8)
+
+
+#define PAK_VERBYTES 32 //
+#define SESSIONKEY_BYTES 32
+
+#define PW_BYTES 8
+#define ID_BYTES 8
+
+#define BETA 12289
+#define PARAM_G 64 //2^8
+#define PARAM_M 2
+#define BITS_M 1
+
+#define PAK_SENDC0BYTES (POLY_BYTES + PAK_SEEDBYTES+ ID_BYTES)
+#define PAK_SENDS0BYTES (POLY_BYTES + POLY_SMALL_BYTES+ PAK_VERBYTES)
+#define PAK_SENDC1BYTES (PAK_VERBYTES)
+
+#define HASH_BYTES 2*ID_BYTES+3*POLY_BYTES+PAK_KEYBYTES
+
+#endif
